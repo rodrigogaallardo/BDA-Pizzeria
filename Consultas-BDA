@@ -1,4 +1,5 @@
 use pizzeria
+
 /*Pedir un Usuario específico */
 select * from pizzeria.cliente where usuario_cli='Jove' ; 
 

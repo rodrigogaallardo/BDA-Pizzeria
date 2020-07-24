@@ -11,6 +11,7 @@ INSERT INTO PIZZERIA.CLIENTE VALUES('ari_gauch','gaucho_ind','Ariel Hernan Cruz'
 INSERT INTO PIZZERIA.CLIENTE VALUES('TamiRO','rojo666','Tamara Fernandez','diablo_666@gmail.com','1165669641','Doblas 390');
 INSERT INTO PIZZERIA.CLIENTE VALUES('Raul_Lo','indr111','Raul Lopez',null,'43666650','Salta 899');
 
+
 INSERT INTO PIZZERIA.PRODUCTO VALUES (01,'Muzarella','Grande de Muzarella','250.00');
 INSERT INTO PIZZERIA.PRODUCTO VALUES (02,'Muzarella JyQ','Chica de Muzarella con jamon y queso','350.00');
 INSERT INTO PIZZERIA.PRODUCTO VALUES (03,'Fugazeta','Grande de Fugazeta','400.50');
