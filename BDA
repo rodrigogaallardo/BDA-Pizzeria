@@ -10,7 +10,6 @@ telefono_cli VARCHAR (20),
 domicilio_cli VARCHAR(50),
 CONSTRAINT pk_usuario_cli PRIMARY KEY(usuario_cli)
 );
-
  
 CREATE TABLE PIZZERIA.PRODUCTO (
 id_prod SMALLINT not null,
