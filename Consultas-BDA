@@ -1,7 +1,7 @@
 use pizzeria
 
 /*Pedir un Usuario específico */
-select * from pizzeria.cliente where usuario_cli='Jove' ; 
+select * from pizzeria.cliente where usuario_cli='Jove'; 
 
 /*cantidad total de registros*/
 select count(*) from pizzeria.cliente ; 
