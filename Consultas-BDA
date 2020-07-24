@@ -7,7 +7,6 @@ select * from pizzeria.cliente where usuario_cli='Jove' ;
 select count(*) from pizzeria.cliente ; 
 
 /* Usuario + email  filtrando por un numero especifico */
- 
 select usuario_cli,email_cli from pizzeria.cliente where telefono_Cli=1155478599;
 
 /*Actualiza la direccion del cliente FrRI filtrando por usuario y telefono */
