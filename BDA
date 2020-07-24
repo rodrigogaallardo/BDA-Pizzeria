@@ -1,0 +1,40 @@
+DROP DATABASE IF EXISTS PIZZERIA ; 
+CREATE DATABASE PIZZERIA ;
+ 
+CREATE TABLE PIZZERIA.CLIENTE( 
+usuario_cli VARCHAR(10) not null,
+password_cli VARCHAR(10) not null,
+nombreApellido_cli VARCHAR(50),
+email_cli VARCHAR (100), 
+telefono_cli VARCHAR (20),
+domicilio_cli VARCHAR(50),
+CONSTRAINT pk_usuario_cli PRIMARY KEY(usuario_cli)
+);
+ 
+CREATE TABLE PIZZERIA.PRODUCTO (
+id_prod SMALLINT not null,
+nombre_prod VARCHAR(50) not null, 
+descripcion_prod VARCHAR(100),
+precio_prod DECIMAL(5,2) not null,
+CONSTRAINT pk_idprod PRIMARY KEY (id_prod)
+);
+ 
+CREATE TABLE PIZZERIA.PEDIDO(
+usuario_cli2 VARCHAR(10) not null,
+id_pedido SMALLINT not null,
+id_prod2 SMALLINT not null, 
+cantidad_pedido SMALLINT,
+hora_salida_pedido DATETIME,
+precio_total_pedido DECIMAL(6,2),
+CONSTRAINT pk_pedido PRIMARY KEY(id_pedido),
+CONSTRAINT fk_pedido_producto FOREIGN KEY(id_prod2 ) REFERENCES PIZZERIA.PRODUCTO (id_prod),
+CONSTRAINT fk_pedido_usuario FOREIGN KEY(usuario_cli2 ) REFERENCES PIZZERIA.CLIENTE (usuario_cli)
+);
+ 
+CREATE TABLE PIZZERIA.TICKET(
+id_ticket SMALLINT not null,
+id_pedido2 SMALLINT not null,
+fecha_compra DATETIME,
+CONSTRAINT pk_ticket PRIMARY KEY(id_ticket),
+CONSTRAINT fk_pedido_ticket FOREIGN KEY(id_pedido2) REFERENCES PIZZERIA.PEDIDO (id_pedido)
+);

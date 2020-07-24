@@ -1,0 +1,38 @@
+use pizzeria
+/*Pedir un Usuario específico */
+select * from pizzeria.cliente where usuario_cli='Jove' ; 
+
+/*cantidad total de registros*/
+select count(*) from pizzeria.cliente ; 
+
+/* Usuario + email  filtrando por un numero especifico */
+ 
+select usuario_cli,email_cli from pizzeria.cliente where telefono_Cli=1155478599;
+
+/*Actualiza la direccion del cliente FrRI filtrando por usuario y telefono */
+update pizzeria.cliente
+set domicilio_cli = 'Centenera 2931'
+where usuario_cli = 'FrRI'
+and  telefono_cli=49222230;
+select * from pizzeria.cliente where usuario_cli = 'FrRI';
+
+/*Cantidad de tipos de pizzas vendidos*/
+select prod.nombre_prod as Producto ,p.cantidad_pedido as Cantidad ,p.hora_salida_pedido as HoraDeSalida from pizzeria.pedido p
+inner join pizzeria.producto prod
+on prod.id_prod = p.id_prod2
+group by p.hora_salida_pedido 
+order by 3 asc ;
+
+/*Muestro usuario + tipos de pizzas + cantidad + precio total de c/u de las pizzas que compró*/
+select ped.usuario_cli2 as Cliente,prod.nombre_prod as Producto,ped.cantidad_pedido as Pedido,sum(ped.precio_total_pedido) as Total from pizzeria.pedido ped
+inner join pizzeria.producto prod 
+on prod.id_prod=ped.id_prod2 
+group by 1,2,3
+
+/*Cantidad de pizzas vendidas en el 2019 ordenados por nombre*/
+select prod.nombre_prod as Producto,ped.cantidad_pedido AS CantidadDePedido,ped.hora_salida_pedido as HoraDePedido from pizzeria.pedido ped
+inner join pizzeria.producto prod
+on prod.id_prod = ped.id_prod2
+where extract(year from ped.hora_salida_pedido)=2019
+group by ped.hora_salida_pedido 
+order by 1 asc ;
