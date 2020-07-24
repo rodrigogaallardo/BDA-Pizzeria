@@ -1,4 +1,3 @@
-
 INSERT INTO PIZZERIA.CLIENTE VALUES('FrRI','11prq','Franco Rivero','FR@gmail.com','49222230','Lanin 1');
 INSERT INTO PIZZERIA.CLIENTE VALUES('JoSe','1234','Jose Sequeiros','Jose_seq@hotmail.com','1136557485','Sastre 22');
 INSERT INTO PIZZERIA.CLIENTE VALUES('Silvv','123re','Silvia Pino',null,'41323225','Lamas 147');
